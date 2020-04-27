@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/primaryBGColor"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMioLogo"
+        android:layout_width="282dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout_mIO"
+            android:layout_width="106dp"
+            android:layout_height="63dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvLogo_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:layout_weight="1"
+                android:letterSpacing="0"
+                android:text="@string/m"
+                android:textAlignment="textEnd"
+                android:textColor="?attr/primaryAccentColor"
+                android:textIsSelectable="false"
+                android:textSize="48sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvLogo_IO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:letterSpacing="0"
+                android:text="@string/io"
+                android:textAlignment="textStart"
+                android:textColor="?attr/primaryTextColor"
+                android:textIsSelectable="false"
+                android:textSize="48sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_mIO"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/tvLogo_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0.25"
+                android:text="@string/money"
+                android:textColor="?attr/primaryAccentColor" />
+
+            <TextView
+                android:id="@+id/tvLogo_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0.25"
+                android:text="@string/in"
+                android:textColor="?attr/primaryTextColor"/>
+
+            <TextView
+                android:id="@+id/tvLogo_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0.25"
+                android:text="@string/separator"
+                android:textColor="?attr/primaryAccentColor" />
+
+            <TextView
+                android:id="@+id/tvLogo_Out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0.5"
+                android:text="@string/out"
+                android:textColor="?attr/primaryTextColor" />
+
+            <TextView
+                android:id="@+id/tvLogo_SquareEndBracket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0.25"
+                android:text="@string/closing_bracket"
+                android:textColor="?attr/primaryAccentColor" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutMioLogo"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/emailEntryImageView"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="?attr/primaryEmailField"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/loginEmailEntryField"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="36dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/loginEmailHint"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/textColWhiteDUI"
+                android:textColorHint="?attr/primaryHintTextColor"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/passwordLoginImageView"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:srcCompat="?attr/primaryPasswordField"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/loginPasswordEntryField"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="36dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/loginPasswordHint"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textColor="@color/textColWhiteDUI"
+                android:textColorHint="?attr/primaryHintTextColor"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="13dp"
+            android:background="?attr/primaryUIButton"
+            android:fontFamily="@font/montserrat_bold"
+            android:letterSpacing="0.15"
+            android:padding="10dp"
+            android:text="@string/loginButton"
+            android:textColor="@color/textColWhiteDUI"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordLoginImageView" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/dont_have_an_account"
+                android:layout_weight="1"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:textAlignment="viewEnd"
+                android:textColor="?attr/primaryTextColor" />
+
+            <TextView
+                android:id="@+id/registerHereTVXML"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/register_here"
+                android:layout_weight="1"
+                android:textColor="?attr/primaryAccentColor" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

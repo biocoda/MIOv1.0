@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/catTrCardViewXML"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        android:background="?attr/primaryTransWidgetBGC"
+        />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:background="?attr/primaryTransWidgetBGC"
+            >
+
+            <ImageView
+                android:id="@+id/trListRowImageXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/out_image"
+                android:layout_margin="4dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/in_out_image" />
+
+            <TextView
+                android:id="@+id/caPayeeTVXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/primaryTextColor"
+                android:layout_toEndOf="@id/trListRowImageXML"
+                android:paddingStart="16dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="3dp"
+                android:layout_toStartOf="@+id/cSymbol"
+                android:text="@string/electricity"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/caDateTVXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/primaryTextColor"
+                android:layout_below="@+id/caPayeeTVXML"
+                android:layout_toEndOf="@id/trListRowImageXML"
+                android:fontFamily="@font/montserrat_light"
+                android:paddingStart="16dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:textSize="14sp"
+                android:text="@string/_23_mar_2020"
+                />
+
+            <TextView
+                android:id="@+id/cSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/primaryTextColor"
+                android:layout_toStartOf="@+id/caAmountTVXML"
+                android:layout_centerVertical="true"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textAlignment="viewEnd"
+                android:text="@string/pound_sign"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:id="@+id/caAmountTVXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/primaryTextColor"
+                android:layout_toStartOf="@+id/filterButton"
+                android:layout_centerVertical="true"
+                android:paddingStart="8dp"
+                android:paddingEnd="12dp"
+                android:text="@string/_113_67"
+                android:textSize="16sp"
+                />
+
+            <ImageButton
+                android:id="@+id/filterButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:srcCompat="?attr/primaryFilterIcon"
+                android:background="@color/transparentDUI"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="filter" />
+        </RelativeLayout>
+</LinearLayout>

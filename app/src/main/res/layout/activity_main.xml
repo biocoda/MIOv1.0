@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/primaryBGColor"
+    tools:context=".DashboardActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/currentAccountCV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/curAccRelLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/primaryWidgetBGC">
+
+            <TextView
+                android:id="@+id/textViewMyBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingLeft="14dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="7dp"
+                android:text="@string/bandAccountName"
+                android:textColor="@color/textColWhiteDUI"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewAccountType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/textViewMyBank"
+                android:fontFamily="@font/montserrat_medium"
+                android:padding="9dp"
+                android:text="@string/current_account"
+                android:textColor="?attr/primaryWidgetAccText"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/curAccSendMessage"
+                android:layout_width="49dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="share"
+                android:padding="8dp"
+                app:srcCompat="?attr/primaryMsgButton" />
+
+            <TextView
+                android:id="@+id/tvCurAccSrtCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewMyBank"
+                android:fontFamily="@font/montserrat_light"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:paddingBottom="6dp"
+                android:text="@string/acAndSortCode1"
+                android:textColor="@color/textColWhiteDUI"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/currAccBalanceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCurAccSrtCode"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingStart="14dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/textColWhiteDUI"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/goToTransBTNXML"
+                android:layout_width="49dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/curAccSendMessage"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="inspector"
+                android:padding="12dp"
+                app:srcCompat="?attr/primaryMagGlassIcon" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+    android:id="@+id/spTrackCV"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="6dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/currentAccountCV"
+    android:background="?attr/primaryDashWBGC">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="?attr/primaryDashWBGC">
+        <TextView
+            android:id="@+id/spProgTitleTVXML"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/spending_tracker"
+            android:textAlignment="center"
+            android:paddingTop="12dp"
+            android:textColor="?attr/primaryTextColor"
+            android:textSize="14sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/spCurProgTVXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="£ 0.00"
+                android:textAlignment="viewEnd"
+                android:textColor="?attr/primaryTextColor"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/spTgtProgTVXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="£ 0.00"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="viewEnd"
+                android:textColor="?attr/primaryTextColor"
+                android:textSize="16sp" />
+        </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/spPBXML"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:max="100"
+            android:padding="12dp"
+            android:progress="50" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/savingAccCV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spTrackCV">
+
+    <RelativeLayout
+        android:id="@+id/savAccRelLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/primaryWidgetBGC">
+
+        <TextView
+            android:id="@+id/textViewMyBank2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingLeft="14dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:text="@string/bandAccountName"
+            android:textColor="@color/textColWhiteDUI"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewAccountType2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/textViewMyBank2"
+            android:fontFamily="@font/montserrat_medium"
+            android:padding="9dp"
+            android:text="@string/savings_account"
+            android:textColor="?attr/primaryWidgetAccText"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/savAccSendMessage"
+            android:layout_width="49dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="share2"
+            android:padding="8dp"
+            app:srcCompat="?attr/primaryMsgButton" />
+
+        <TextView
+            android:id="@+id/tvSavAccSrtCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewMyBank2"
+            android:fontFamily="@font/montserrat_light"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="6dp"
+            android:text="@string/acAndSortCode2"
+            android:textColor="@color/textColWhiteDUI"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/savAccBalanceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSavAccSrtCode"
+            android:fontFamily="@font/montserrat_medium"
+            android:paddingStart="14dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/textColWhiteDUI"
+            android:textSize="22sp" />
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/saTrackCV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="6dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savingAccCV"
+        android:background="?attr/primaryWidgetBGC">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:background="?attr/primaryDashWBGC">
+            <TextView
+                android:id="@+id/saProgTitleTVXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="12dp"
+                android:text="@string/saving_tracker"
+                android:textAlignment="center"
+                android:textColor="?attr/primaryTextColor"
+                android:textSize="14sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/saCurProgTVXML"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="£ 0.00"
+                    android:textAlignment="viewEnd"
+                    android:textColor="?attr/primaryTextColor"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/saTgtProgTVXML"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="£ 0.00"
+                    android:layout_alignParentEnd="true"
+                    android:textAlignment="viewEnd"
+                    android:textColor="?attr/primaryTextColor"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+            <ProgressBar
+                android:id="@+id/saPBXML"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:padding="12dp"
+                android:progress="50" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/dashboardIB"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/primaryWidgetBGC"
+            app:srcCompat="?attr/primaryDimmedDashboardButton"
+            android:contentDescription="dashboard" />
+
+        <ImageButton
+            android:id="@+id/settingIB"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/primaryWidgetBGC"
+            app:srcCompat="@mipmap/settings_button_image"
+            android:contentDescription="settings"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

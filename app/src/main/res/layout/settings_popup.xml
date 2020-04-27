@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_id"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/accTargetCVXML"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        android:layout_margin="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+            <TextView
+                android:id="@+id/settingsPopupTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/addTargets"
+                android:textSize="16sp" />
+            <me.abhinay.input.CurrencyEditText
+                android:id="@+id/addSpendTargetETXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/settingsPopupTitle"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:hint="@string/enter_spending_target"
+                android:cursorVisible="false"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textSize="16sp" />
+            <me.abhinay.input.CurrencyEditText
+                android:id="@+id/addSavingTargetETXML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addSpendTargetETXML"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                android:cursorVisible="false"
+                android:textAlignment="center"
+                android:hint="@string/enter_saving_target"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_below="@+id/addSavingTargetETXML">
+                <Button
+                    android:id="@+id/saveTargetBXML"
+                    android:layout_width="wrap_content"
+                    android:layout_height="54dp"
+                    android:background="@drawable/app_button"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:letterSpacing="0.15"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/addButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:textColor="@color/textColWhiteDUI" />
+                <Button
+                    android:id="@+id/saveCaTBXML"
+                    android:layout_width="wrap_content"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cancel_button"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:letterSpacing="0.15"
+                    android:text="@string/cancelAddButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:textColor="@color/textColWhiteDUI" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
